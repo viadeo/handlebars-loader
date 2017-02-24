@@ -22,7 +22,7 @@ module.exports = function(source) {
 	var isAutoResolvingDisabled = query.disableAutoResolving || false;
 	var autoRegisterPartials = query.autoRegisterPartials || false;
 	var resourcePath = loaderApi.resourcePath;
-	var resolveRoot = loaderApi.options instanceof Object ? loaderApi.options.resolve.root : '';
+	var resolveRoot = query.root || '';
 
 	// Let user give another compiler if handlebars module in package.json is not the right version
 	if (query.handlebarsCompiler) {
